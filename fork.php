@@ -34,7 +34,7 @@ $from = 0;
 if ($handle != false) {
 
     // Search the filesize
-    $size = filesize($filename);
+    $size = filesize($file);
     $trunk = round($size / $threads);
     $pos = $trunk;
     for($i=0;$i<$threads;$i++) {

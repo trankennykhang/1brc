@@ -6,7 +6,9 @@
  * - Order by alphabet
  * - Output the result
  */
-
+/*
+ * take 13 s to read the file
+ */
  // Check CLI
 if (PHP_SAPI != "cli") {
     die('Not a command');
@@ -45,12 +47,13 @@ if ($handle != false) {
             }
         }
     }
+    print "Execute time to read data: ". (time() - $time) . PHP_EOL;
     $str = "";
     foreach ($stations as $name=>$values) {
         $med = round(($values[0] + $values[1]) / 2, 2);
         $str .= $name. ': '. $values[0] . '/'. $med . '/' . $values[1]. ';';
     }
-    print $str . PHP_EOL;
+    //print $str . PHP_EOL;
     print "Hash string: ". md5($str). PHP_EOL;
 }
 print "Execute time is: ". (time() - $time) . PHP_EOL;

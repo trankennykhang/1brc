@@ -48,11 +48,12 @@ if ($handle != false) {
     $str = "";
     ksort($stations);
     foreach ($stations as $name=>$values) {
-        $med = round(($values[0] + $values[1]) / 2, 2);
-        $str .= $name. ': '. $values[0] . '/'. $med . '/' . $values[1]. ';';
+        $med = round(($values[0] + $values[1]) / 2, 2); 
+        $str = $name. ': '. $values[0] . '/'. $med . '/' . $values[1]. ';';
+        print $str."\n";
     }
-    print $str . PHP_EOL;
-    print "Hash string: ". md5($str). PHP_EOL;
+    //print $str . PHP_EOL;
+    //print "Hash string: ". md5($str). PHP_EOL;
 }
 print "Execute time is: ". (time() - $time) . PHP_EOL;
 print "Memory usage in MB: ".(memory_get_usage() / (1024 * 1024)).PHP_EOL;
